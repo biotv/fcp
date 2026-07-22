@@ -296,11 +296,20 @@ h1 {
 }
 
 footer {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
   padding: 18px 0 0;
   color: rgba(20, 33, 29, 0.62);
   font-size: 0.84rem;
   font-weight: 700;
   text-align: center;
+}
+
+.visitor-badge {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 @media (max-width: 520px) {
