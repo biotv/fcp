@@ -10,7 +10,6 @@
   --green-dark: #063f2e;
   --terracotta: #a45640;
   --gold: #c58a2f;
-  --blue: #2e6f93;
   --shadow: 0 22px 54px rgba(15, 34, 28, 0.16);
 }
 
@@ -91,8 +90,8 @@ h1 {
 }
 
 .primary-link,
-.service-link,
-.quick-link {
+.quick-link,
+.inline-action {
   display: grid;
   align-items: center;
   min-width: 0;
@@ -104,10 +103,10 @@ h1 {
 
 .primary-link:hover,
 .primary-link:focus-visible,
-.service-link:hover,
-.service-link:focus-visible,
 .quick-link:hover,
-.quick-link:focus-visible {
+.quick-link:focus-visible,
+.inline-action:hover,
+.inline-action:focus-visible {
   transform: translateY(-2px);
   border-color: rgba(8, 112, 77, 0.42);
   box-shadow: 0 16px 36px rgba(15, 34, 28, 0.14);
@@ -128,8 +127,7 @@ h1 {
   box-shadow: var(--shadow);
 }
 
-.primary-link svg,
-.service-link svg {
+.primary-link svg {
   width: 22px;
   height: 22px;
 }
@@ -141,8 +139,7 @@ h1 {
   font-size: 0.86rem;
 }
 
-.links-section,
-.about-block {
+.links-section {
   margin-top: 16px;
   padding: 16px;
   border: 1px solid var(--line);
@@ -152,8 +149,7 @@ h1 {
   box-shadow: 0 16px 42px rgba(15, 34, 28, 0.09);
 }
 
-.links-section h2,
-.about-block h2 {
+.links-section h2 {
   margin-bottom: 12px;
   color: var(--green-dark);
   font-size: 0.92rem;
@@ -162,35 +158,113 @@ h1 {
   text-transform: uppercase;
 }
 
-.link-list {
+.accordion-list {
   display: grid;
   gap: 10px;
 }
 
-.service-link {
-  grid-template-columns: 34px minmax(0, 1fr) 18px;
-  gap: 11px;
-  min-height: 58px;
-  padding: 10px 12px;
-  color: var(--ink);
+.accordion-item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
   background: var(--surface-strong);
+  overflow: clip;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
 }
 
-.service-link svg:first-child {
+.accordion-item:hover,
+.accordion-item:focus-within {
+  border-color: rgba(8, 112, 77, 0.42);
+  box-shadow: 0 16px 36px rgba(15, 34, 28, 0.11);
+}
+
+.accordion-item summary {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 18px;
+  gap: 11px;
+  align-items: center;
+  min-height: 58px;
+  padding: 10px 12px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion-item summary > svg:first-child {
+  width: 22px;
+  height: 22px;
   color: var(--terracotta);
 }
 
-.service-link svg:last-child {
+.accordion-item summary span {
+  min-width: 0;
+}
+
+.accordion-item summary strong,
+.accordion-item summary small {
+  display: block;
+}
+
+.accordion-item summary strong {
+  font-size: 1rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.accordion-item summary small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.toggle-icon {
   width: 18px;
   height: 18px;
   color: var(--muted);
+  transition: transform 160ms ease;
 }
 
-.service-link span {
-  min-width: 0;
+.accordion-item[open] .toggle-icon {
+  transform: rotate(90deg);
+}
+
+.accordion-content {
+  display: grid;
+  gap: 12px;
+  padding: 0 12px 14px 57px;
+}
+
+.accordion-content p {
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.58;
+}
+
+.about-item .accordion-content {
+  padding-left: 12px;
+}
+
+.inline-action {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 11px;
+  color: #ffffff;
+  font-size: 0.88rem;
   font-weight: 800;
-  line-height: 1.25;
-  overflow-wrap: anywhere;
+  line-height: 1.2;
+  background: var(--green);
+}
+
+.inline-action svg {
+  width: 17px;
+  height: 17px;
 }
 
 .quick-grid {
@@ -219,21 +293,6 @@ h1 {
   line-height: 1.2;
   text-align: center;
   overflow-wrap: anywhere;
-}
-
-.about-block {
-  display: grid;
-  gap: 12px;
-}
-
-.about-block h2 {
-  margin-bottom: 0;
-}
-
-.about-block p {
-  color: var(--muted);
-  font-size: 0.96rem;
-  line-height: 1.62;
 }
 
 footer {
@@ -274,15 +333,22 @@ footer {
     font-size: 0.95rem;
   }
 
-  .links-section,
-  .about-block {
+  .links-section {
     padding: 12px;
   }
 
-  .service-link {
+  .accordion-item summary {
     grid-template-columns: 30px minmax(0, 1fr) 16px;
     gap: 9px;
     min-height: 56px;
+  }
+
+  .accordion-content {
+    padding-left: 51px;
+  }
+
+  .about-item .accordion-content {
+    padding-left: 12px;
   }
 
   .quick-grid {
