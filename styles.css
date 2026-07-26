@@ -3,14 +3,14 @@
   --paper: #f6f4ed;
   --surface: rgba(255, 255, 255, 0.88);
   --surface-strong: #ffffff;
-  --ink: #14211d;
-  --muted: #647169;
-  --line: rgba(20, 33, 29, 0.13);
-  --green: #08704d;
-  --green-dark: #063f2e;
+  --ink: #24161a;
+  --muted: #75676c;
+  --line: rgba(79, 16, 34, 0.14);
+  --burgundy: #8f1d3b;
+  --burgundy-dark: #4f1022;
   --terracotta: #a45640;
   --gold: #c58a2f;
-  --shadow: 0 22px 54px rgba(15, 34, 28, 0.16);
+  --shadow: 0 22px 54px rgba(79, 16, 34, 0.18);
 }
 
 * {
@@ -23,7 +23,7 @@ body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background:
-    linear-gradient(180deg, rgba(6, 63, 46, 0.66), rgba(246, 244, 237, 0.94) 46%, rgba(246, 244, 237, 1)),
+    linear-gradient(180deg, rgba(79, 16, 34, 0.7), rgba(246, 244, 237, 0.94) 46%, rgba(246, 244, 237, 1)),
     url("assets/consultoria-hero.jpg") center top / cover no-repeat fixed,
     var(--paper);
 }
@@ -54,7 +54,7 @@ a {
   object-fit: cover;
   object-position: center;
   background: #ffffff;
-  box-shadow: 0 18px 42px rgba(6, 63, 46, 0.34);
+  box-shadow: 0 18px 42px rgba(79, 16, 34, 0.34);
 }
 
 .eyebrow {
@@ -90,7 +90,6 @@ h1 {
 }
 
 .primary-link,
-.quick-link,
 .inline-action {
   display: grid;
   align-items: center;
@@ -103,13 +102,11 @@ h1 {
 
 .primary-link:hover,
 .primary-link:focus-visible,
-.quick-link:hover,
-.quick-link:focus-visible,
 .inline-action:hover,
 .inline-action:focus-visible {
   transform: translateY(-2px);
-  border-color: rgba(8, 112, 77, 0.42);
-  box-shadow: 0 16px 36px rgba(15, 34, 28, 0.14);
+  border-color: rgba(143, 29, 59, 0.42);
+  box-shadow: 0 16px 36px rgba(79, 16, 34, 0.16);
   outline: none;
 }
 
@@ -123,7 +120,7 @@ h1 {
   color: #ffffff;
   text-align: left;
   border-color: transparent;
-  background: linear-gradient(135deg, var(--green-dark), var(--green));
+  background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy));
   box-shadow: var(--shadow);
 }
 
@@ -146,12 +143,12 @@ h1 {
   border-radius: 8px;
   background: var(--surface);
   backdrop-filter: blur(18px);
-  box-shadow: 0 16px 42px rgba(15, 34, 28, 0.09);
+  box-shadow: 0 16px 42px rgba(79, 16, 34, 0.1);
 }
 
 .links-section h2 {
   margin-bottom: 12px;
-  color: var(--green-dark);
+  color: var(--burgundy-dark);
   font-size: 0.92rem;
   line-height: 1.25;
   letter-spacing: 0;
@@ -173,8 +170,8 @@ h1 {
 
 .accordion-item:hover,
 .accordion-item:focus-within {
-  border-color: rgba(8, 112, 77, 0.42);
-  box-shadow: 0 16px 36px rgba(15, 34, 28, 0.11);
+  border-color: rgba(143, 29, 59, 0.42);
+  box-shadow: 0 16px 36px rgba(79, 16, 34, 0.12);
 }
 
 .accordion-item summary {
@@ -259,7 +256,7 @@ h1 {
   font-size: 0.88rem;
   font-weight: 800;
   line-height: 1.2;
-  background: var(--green);
+  background: var(--burgundy);
 }
 
 .inline-action svg {
@@ -267,40 +264,12 @@ h1 {
   height: 17px;
 }
 
-.quick-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.quick-link {
-  justify-items: center;
-  gap: 7px;
-  min-height: 76px;
-  padding: 10px 8px;
-  color: var(--green-dark);
-  background: var(--surface-strong);
-}
-
-.quick-link svg {
-  width: 21px;
-  height: 21px;
-}
-
-.quick-link span {
-  font-size: 0.82rem;
-  font-weight: 800;
-  line-height: 1.2;
-  text-align: center;
-  overflow-wrap: anywhere;
-}
-
 footer {
   display: grid;
   justify-items: center;
   gap: 10px;
   padding: 18px 0 0;
-  color: rgba(20, 33, 29, 0.62);
+  color: rgba(36, 22, 26, 0.62);
   font-size: 0.84rem;
   font-weight: 700;
   text-align: center;
@@ -315,7 +284,7 @@ footer {
 @media (max-width: 520px) {
   body {
     background:
-      linear-gradient(180deg, rgba(6, 63, 46, 0.72), rgba(246, 244, 237, 0.96) 38%, rgba(246, 244, 237, 1)),
+      linear-gradient(180deg, rgba(79, 16, 34, 0.76), rgba(246, 244, 237, 0.96) 38%, rgba(246, 244, 237, 1)),
       url("assets/consultoria-hero.jpg") center top / auto 360px no-repeat,
       var(--paper);
   }
@@ -360,7 +329,4 @@ footer {
     padding-left: 12px;
   }
 
-  .quick-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
