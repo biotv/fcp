@@ -275,6 +275,19 @@ footer {
   text-align: center;
 }
 
+footer a {
+  color: var(--burgundy-dark);
+  font-weight: 900;
+  text-decoration-color: rgba(79, 16, 34, 0.34);
+  text-underline-offset: 3px;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  color: var(--burgundy);
+  outline: none;
+}
+
 .visitor-badge {
   display: block;
   max-width: 100%;
